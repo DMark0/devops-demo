@@ -19,7 +19,7 @@ jobs:
           DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
         run: |
           docker build -t dmark0/getting-started:latest .
-          echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
+          docker login -u $DOCKER_USERNAME -p $DOCKER_TOKEN
           docker push dmark0/getting-started:latest
 
   deploy:
