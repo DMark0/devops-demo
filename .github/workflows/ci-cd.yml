@@ -16,7 +16,7 @@ jobs:
       - name: Build Docker Image
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+          DOCKER_TOKEN: ${{ env.DOCKER_TOKEN }}
         run: |
           docker build -t dmark0/getting-started:latest .
           docker login -u $DOCKER_USERNAME -p $DOCKER_TOKEN
