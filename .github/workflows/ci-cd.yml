@@ -33,4 +33,4 @@ jobs:
 
     - name: Set Up Docker
       run: |
-        docker compose -f compose.yaml up -d
+        docker-compose -f compose.yaml up -d
