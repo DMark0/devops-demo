@@ -15,11 +15,11 @@ jobs:
 
       - name: Build Docker Image
         env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_TOKEN: ${{ env.DOCKER_TOKEN }}
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
         run: |
           docker build -t dmark0/getting-started:latest .
-          docker login -u $DOCKER_USERNAME -p $DOCKER_TOKEN
+          docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_TOKEN
           docker push dmark0/getting-started:latest
 
   deploy:
